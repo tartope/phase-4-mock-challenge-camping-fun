@@ -2,7 +2,7 @@ class CampersController < ApplicationController
 
     def index
         campers = Camper.all
-        render json: campers, only: [:id, :name, :age]
+        render json: campers
     end
 
     def show 

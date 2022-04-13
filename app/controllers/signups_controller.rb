@@ -1,8 +1,9 @@
 class SignupsController < ApplicationController
 
     def create 
+        # byebug
         signup = Signup.create!(create_params)
-        render json: signup, status: :created
+        render json: signup.activity, status: :created
     rescue ActiveRecord::RecordInvalid => invalid
         render json: {error: invalid.record.errors.full_messages}, status: :unprocessable_entity
 
